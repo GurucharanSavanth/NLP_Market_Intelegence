@@ -1,0 +1,9 @@
+beautifulsoup4
+requests
+threading
+queue
+json
+datetime
+gradio
+plotly
+logging
