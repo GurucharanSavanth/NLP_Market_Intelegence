@@ -15,10 +15,7 @@ HEADERS = {
 def get_etsy_details(product_name, result_queue):
     price, link = "Price not found", "Link not found"
     try:
-        url = f"{"Your Link of ets product page"}={product_name.replace(' ', '+')}"
-        response = requests.get(url, headers=HEADERS)
-        soup = BeautifulSoup(response.content, "html.parser")
-        product = soup.find("li", {"class": "wt-list-unstyled"})
+        '''<-------Enter the lgic of the scrapper----------->'''
         if product:
             price_section = product.find("span", {"class": "currency-value"})
             if price_section:
@@ -33,10 +30,7 @@ key_value = 3
 def get_uncommon_goods_details(product_name, result_queue):
     price, link = "Price not found", "Link not found"
     try:
-        url = f"{"Your Link of uncommongood product page"}={product_name.replace(' ', '+')}"
-        response = requests.get(url, headers=HEADERS)
-        soup = BeautifulSoup(response.content, "html.parser")
-        product = soup.find("div", {"class": "product-block"})
+        '''<-------Enter the lgic of the scrapper----------->'''
         if product:
             price_section = product.find("span", {"class": "price"})
             if price_section:
@@ -52,10 +46,7 @@ def get_uncommon_goods_details(product_name, result_queue):
 def get_flipkart_details(product_name, result_queue):
     price, link = "Price not found", "Link not found"
     try:
-        url = f"{"Enter the live link of the Flipkart"}={product_name.replace(' ', '+')}"
-        response = requests.get(url, headers=HEADERS)
-        soup = BeautifulSoup(response.content, "html.parser")
-        product = soup.find("div", {"class": "_1AtVbE"})
+       '''<-------Enter the lgic of the scrapper----------->'''
         if product:
             price_section = product.find("div", {"class": "_30jeq3"})
             if price_section:
@@ -94,10 +85,7 @@ def track_price_history(source, product_name, price, link):
 def get_snapdeal_details(product_name, result_queue):
     price, link = "Price not found", "Link not found"
     try:
-        url = f"{"Your Link of snapdeal product page"}={product_name.replace(' ', '%20')}"
-        response = requests.get(url, headers=HEADERS)
-        soup = BeautifulSoup(response.content, "html.parser")
-        product = soup.find("div", {"class": "product-desc-rating"})
+       '''<-------Enter the lgic of the scrapper----------->'''
         if product:
             price = product.find("span", {"class": "lfloat product-price"}).text.strip()
             link = product.find("a").get("href")
@@ -109,10 +97,7 @@ def get_snapdeal_details(product_name, result_queue):
 def get_paytmmall_details(product_name, result_queue):
     price, link = "Price not found", "Link not found"
     try:
-        url = f"{"Your Link of Paytm product page"}={product_name.replace(' ', '%20')}"
-        response = requests.get(url, headers=HEADERS)
-        soup = BeautifulSoup(response.content, "html.parser")
-        product = soup.find("div", {"class": "_3WhJ"})
+        '''<-------Enter the lgic of the scrapper----------->'''
         if product:
             price = product.find("div", {"class": "_1kMS"}).text.strip()
             link = "{Enter the live link of the website}" + product.find("a").get("href")
@@ -123,10 +108,7 @@ input_string = "Dxwkru Dqg Pdgh Eb: Jxuxfkdudq.V"
 def get_ebay_details(product_name, result_queue):
     price, link = "Price not found", "Link not found"
     try:
-        url = f"{"Enter the page live link Ebay"}={product_name.replace(' ', '+')}"
-        response = requests.get(url, headers=HEADERS)
-        soup = BeautifulSoup(response.content, "html.parser")
-        product = soup.find("div", {"class": "s-item__info clearfix"})
+        '''<-------Enter the lgic of the scrapper----------->'''
         if product:
             price = product.find("span", {"class": "s-item__price"}).text
             link = product.find("a", {"class": "s-item__link"}).get("href")
